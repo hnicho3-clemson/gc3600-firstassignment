@@ -1,0 +1,54 @@
+GC 3600 Setup Skill
+===================
+
+WHAT THIS IS
+A Claude Code skill that checks your installation, sets up your website project
+folder, and turns your Business Design Brief into a CLAUDE.md file.
+
+You need Claude Code installed and working first. This skill checks and finishes
+your setup, it does not install Claude Code for you.
+
+HOW TO INSTALL
+
+Mac:
+  1. Unzip this file.
+  2. Open Terminal and run:
+       mkdir -p ~/.claude/skills
+  3. Drag the "gc3600-setup" folder into the .claude/skills folder.
+     To find it: in Finder press Cmd+Shift+G, type ~/.claude/skills, press Enter.
+
+Windows:
+  1. Unzip this file.
+  2. Open PowerShell and run:
+       mkdir "$env:USERPROFILE\.claude\skills" -Force
+  3. In File Explorer, paste this into the address bar and press Enter:
+       %USERPROFILE%\.claude\skills
+  4. Drag the "gc3600-setup" folder into that window.
+
+CHECK IT WORKED
+  1. Open your project folder in the terminal and run:  claude
+  2. Type a forward slash:  /
+  3. You should see "gc3600-setup" in the list.
+
+HOW TO USE IT
+  Type this inside Claude Code:
+       /gc3600-setup
+
+WHAT IT DOES
+  Phase 1  Checks your install and reports what is actually broken
+  Phase 2  Confirms you are in the right project folder
+  Phase 3  Interviews you about your Business Design Brief and writes CLAUDE.md
+  Phase 4  Creates a bare index.html, styles.css, and images folder
+  Phase 5  Teaches plan mode, /clear, and editing CLAUDE.md
+  Phase 6  Runs a final checklist and tells you what you still owe
+
+WHAT IT WILL NOT DO
+  It will not design your site. It will not pick your colors, fonts, layout, or
+  write your copy. Those decisions are the assignment.
+
+IF IT DOES NOT SHOW UP
+  Check the folder structure is exactly this:
+       ~/.claude/skills/gc3600-setup/SKILL.md
+  Not this:
+       ~/.claude/skills/gc3600-setup/gc3600-setup/SKILL.md
+  Then quit Claude Code and start it again.
