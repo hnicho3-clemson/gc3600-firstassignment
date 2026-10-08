@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Haley Nichols — Station HN</title>
+    <meta
+      name="description"
+      content="Haley Nichols is a graphic communications designer. This is her portfolio: an underwater field study of branding, illustration, objects, and display."
+    />
+    <meta name="theme-color" content="#07141c" />
+    <meta property="og:title" content="Haley Nichols — Station HN" />
+    <meta
+      property="og:description"
+      content="An underwater field study of branding, illustration, plush, and display. Dive to find the work."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./media/sjwd/map.webp" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,620;1,9..144,500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Outfit:wght@340;460;560&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html, body { margin: 0; background: #07141c; color: #f3ead7; }
+      #boot {
+        position: fixed; inset: 0; display: grid; place-items: center;
+        background: #07141c; z-index: 80;
+        font-family: Georgia, serif; letter-spacing: 0.22em; font-size: 14px;
+      }
+    </style>
+    <script>
+      try {
+        var calm = localStorage.getItem("hn-calm");
+        if (calm === "1" || (calm !== "0" && matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+          document.documentElement.classList.add("calm");
+        }
+      } catch (e) {}
+    </script>
+    <script type="module" crossorigin src="./assets/index-DHXufXQM.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Dpc23hw4.css">
+  </head>
+  <body>
+    <div id="boot" role="status">DIVING IN</div>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 24px; font-family: Georgia, serif;">
+        Haley Nichols — graphic communications. This portfolio needs JavaScript to dive.
+        The work is also published at
+        <a href="https://hnicho3.myportfolio.com">hnicho3.myportfolio.com</a>.
+      </p>
+    </noscript>
+  </body>
+</html>
