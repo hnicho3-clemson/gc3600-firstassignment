@@ -1,4 +1,11 @@
 (function () {
+  try {
+    if (sessionStorage.getItem("worldEnter")) {
+      sessionStorage.removeItem("worldEnter");
+      document.body.classList.add("from-world");
+    }
+  } catch (err) {}
+
   const nav = document.querySelector(".nav");
   const toggle = document.querySelector(".nav-toggle");
   const links = document.querySelector(".nav-links");

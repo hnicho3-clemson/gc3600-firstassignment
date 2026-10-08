@@ -603,14 +603,26 @@ body.has-pointer .follower { opacity: 0.85; }
 .night p { max-width: 38rem; color: rgba(246, 241, 230, 0.82); font-size: 1.15rem; }
 .night .firefly { animation-duration: 5.5s; }
 
-.page-hero { padding: 3.2rem 0 1rem; }
+.page-hero {
+  padding: 4.8rem 0 1rem;
+  background:
+    radial-gradient(130px 72px at 6% 0, #1e4a34 42%, transparent 44%),
+    radial-gradient(110px 64px at 16% 0, #2f6b45 42%, transparent 44%),
+    radial-gradient(90px 50px at 27% 0, #163528 42%, transparent 44%),
+    radial-gradient(140px 76px at 94% 0, #143024 42%, transparent 44%),
+    linear-gradient(#10261c 0 56px, transparent 56px);
+}
 .page-hero .back {
   display: block;
   width: fit-content;
   margin-bottom: 0.8rem;
-  color: var(--moss);
+  color: #2a1c12;
   text-decoration: none;
   font-size: 0.92rem;
+  background: #e7d3b0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px 12px 3px 8px;
+  box-shadow: 0 5px 0 #8d5a32;
 }
 .page-hero .back:hover { text-decoration: underline; }
 .page-hero .lead { margin-top: 0.9rem; }
@@ -837,6 +849,30 @@ form {
   .section-head { flex-direction: column; align-items: flex-start; }
   .next-proj { flex-direction: column; }
   .next-proj .end { text-align: left; margin-left: 0; }
+}
+
+body.from-world main {
+  animation: caseRise 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes caseRise {
+  from { opacity: 0; transform: translateY(18px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+.night-scene .btn-ghost {
+  color: #f6f1e6;
+  border-color: rgba(246, 241, 230, 0.45);
+}
+body.world .thanks {
+  background: #f3ead8;
+  color: #1c2418;
+  border-radius: 3px 16px 8px 4px;
+}
+body.world .thanks h2,
+body.world .thanks p { color: #1c2418; }
+body.world .thanks .btn-ghost {
+  color: #1c2418;
+  border-color: rgba(28, 36, 24, 0.4);
+  background: transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
