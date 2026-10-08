@@ -82,7 +82,7 @@ export function Hud() {
         Skip to index
       </a>
       <Hero />
-      <div className="buoy-sign" data-shift="-170%" ref={(node) => {
+      <div className="buoy-sign" data-shift="-108%" ref={(node) => {
         if (node) runtime.labelEls.set("buoy", node);
         else runtime.labelEls.delete("buoy");
       }}>
@@ -123,7 +123,6 @@ export function Hud() {
         ))}
       </div>
       <EdgeKelp />
-      <Shoal />
       <Cursor />
       <ZoneLive />
       {ui.toast && (
@@ -268,16 +267,6 @@ function EdgeKelp() {
       <path d="M40 800 C70 640 20 520 60 400 C100 280 30 180 70 0" />
       <path d="M90 800 C50 600 120 480 70 320 C30 180 110 80 80 0" />
       <path d="M20 800 C60 700 10 560 40 460" />
-    </svg>
-  );
-}
-
-function Shoal() {
-  return (
-    <svg className="shoal" viewBox="0 0 1200 200" aria-hidden="true">
-      <path d="M20 100 C50 70 80 70 100 100 C80 110 50 120 20 100 Z" />
-      <path d="M140 80 C170 55 200 60 220 86 C190 96 160 100 140 80 Z" />
-      <path d="M250 120 C280 95 320 100 340 128 C300 140 270 142 250 120 Z" />
     </svg>
   );
 }

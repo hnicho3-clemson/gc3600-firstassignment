@@ -1,7 +1,6 @@
 import { Component, useEffect, useState, type ReactNode } from "react";
-import { Canvas } from "@react-three/fiber";
 import { depthForY, projects } from "./data";
-import { Ocean } from "./ocean/Ocean";
+import { Sea } from "./ocean/Sea";
 import { runtime, scrollToDepth } from "./runtime";
 import { CaseStudy } from "./ui/CaseStudy";
 import { FlatSea, Hud } from "./ui/Hud";
@@ -179,17 +178,7 @@ function Experience() {
     <>
       <div className="spacer" />
       <Boundary onFail={() => setWebgl(false)}>
-        <Canvas
-          className="sea"
-          dpr={runtime.mobile ? [1, 1.2] : [1, 1.5]}
-          gl={{ antialias: !runtime.mobile, alpha: false, powerPreference: "high-performance" }}
-          camera={{ fov: runtime.mobile ? 50 : 38, near: 0.1, far: 90, position: [0, 6.4, 6.15] }}
-          onPointerMissed={() => {
-            runtime.wantsRipple = true;
-          }}
-        >
-          <Ocean />
-        </Canvas>
+        <Sea />
       </Boundary>
       <div className="veil" />
       <div className="grain" />

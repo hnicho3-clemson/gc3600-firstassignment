@@ -50,7 +50,8 @@ img { max-width: 100%; }
 .skip:focus { top: 12px; }
 
 .spacer { height: 820vh; pointer-events: none; }
-.sea { position: fixed !important; inset: 0; z-index: 1; }
+.sea { position: fixed !important; inset: 0; z-index: 1; display: block; touch-action: none; }
+html.has-cursor .sea { cursor: none !important; }
 .veil, .grain {
   position: fixed;
   inset: 0;
@@ -120,7 +121,7 @@ html[data-sunk="1"] .hero { visibility: hidden; }
   left: 0;
   top: 0;
   z-index: 4;
-  width: 280px;
+  width: 250px;
   opacity: 0;
   background: #f3ead7;
   color: #1b2a32;
@@ -528,6 +529,9 @@ html[data-sunk="1"] .hero { visibility: hidden; }
 
 @media (max-width: 760px) {
   .relic { max-width: min(220px, 46vw); border-width: 4px; }
+  .buoy-sign { width: 168px; padding: 8px 8px 7px; }
+  .buoy-sign strong { font-size: 18px; }
+  .buoy-sign em { letter-spacing: 0.06em; }
   .hero { top: 12vh; }
   .hero h1 { font-size: 64px; }
   .tape { left: 0; right: 0; top: auto; bottom: 0; width: auto; height: auto; flex-direction: row; background: rgba(7, 16, 24, 0.72); padding: 10px 12px 14px; }

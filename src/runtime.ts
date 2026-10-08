@@ -1,12 +1,25 @@
-import type { Group, Object3D } from "three";
-import { Vector2, Vector3 } from "three";
+export type Vec = { x: number; y: number; z: number; set: (x: number, y: number, z?: number) => void };
+export type Anchor = { x: number; y: number };
+
+function vec(x = 0, y = 0, z = 0): Vec {
+  return {
+    x,
+    y,
+    z,
+    set(nx: number, ny: number, nz = 0) {
+      this.x = nx;
+      this.y = ny;
+      this.z = nz;
+    },
+  };
+}
 
 export const runtime = {
   scroll: 0,
   depth: 0,
   camY: 6.4,
-  pointerNdc: new Vector2(0, 0),
-  pointerWorld: new Vector3(0, 4, 0),
+  pointerNdc: vec(),
+  pointerWorld: vec(0, 4, 0),
   pointerOn: false,
   hover: "",
   reduced: false,
@@ -18,7 +31,7 @@ export const runtime = {
   crabStealUntil: 0,
   crabScreen: { x: 0, y: 0 },
   pearls: new Set<string>(),
-  anchors: new Map<string, Object3D>(),
+  anchors: new Map<string, Anchor>(),
   labelEls: new Map<string, HTMLElement>(),
   ripple: null as null | ((x: number, y: number, z: number) => void),
   burstBubbles: 0,
@@ -34,5 +47,3 @@ export function scrollToDepth(depth: number, smooth = true) {
     behavior: smooth && !calm ? "smooth" : "auto",
   });
 }
-
-export type AnchorBind = Group;
