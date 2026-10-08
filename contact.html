@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact · Haley Nichols</title>
+  <meta name="description" content="Contact Haley Nichols, graphic designer and illustrator, through Instagram, TikTok, or Etsy at BiggoDoodle.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%233d6a4a' d='M16 3c7 4 11 11 9 19-6 2-14 0-18-6C4 9 8 4 16 3z'/%3E%3C/svg%3E">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/world.css">
+</head>
+<body class="world" data-sky="1">
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="sky" aria-hidden="true"><div class="stars"></div><div class="moon-orb"></div></div>
+  <div class="follower" aria-hidden="true"></div>
+  <p class="bubble" role="status" hidden></p>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="index.html">Haley Nichols</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+      <nav class="nav-links" id="site-nav" aria-label="Primary">
+        <a href="index.html#enter">Enter</a>
+        <a href="index.html#clearing">Clearing</a>
+        <a href="index.html#grove">Grove</a>
+        <a href="#night" aria-current="page">Night</a>
+      </nav>
+    </div>
+  </header>
+  <main class="world-main" id="main">
+    <section class="scene night-scene" id="night">
+      <div class="scene-inner">
+        <div class="night-copy">
+          <h1 id="night-title">You made it to night</h1>
+          <p>Seeking graphic communication internships, and open to illustration. The fastest path is @biggodoodle.</p>
+        </div>
+        <div class="camp">
+          <div>
+            <div class="fire" aria-hidden="true"><div class="logs"></div><div class="flame"></div></div>
+            <div class="stones">
+              <a href="https://www.instagram.com/biggodoodle/?hl=en">Instagram<small>@biggodoodle</small></a>
+              <a href="https://www.tiktok.com/@biggodoodle?lang=en">TikTok<small>@biggodoodle</small></a>
+              <a href="http://etsy.com/shop/BiggoDoodle">Etsy<small>BiggoDoodle</small></a>
+            </div>
+          </div>
+          <div>
+            <form class="night-form" id="contact-form">
+              <div class="field"><label><span>Name</span><input name="name" type="text" required autocomplete="name"></label></div>
+              <div class="field"><label><span>Email</span><input name="email" type="email" required autocomplete="email"></label></div>
+              <div class="field"><label><span>Message</span><textarea name="message" required></textarea></label></div>
+              <button class="btn" type="submit">Leave a note</button>
+              <p class="form-note">No public email on the original portfolio. This copies your note and opens a mail draft.</p>
+            </form>
+            <div class="thanks" hidden>
+              <h2>Thank you so much!</h2>
+              <p>I'll get back to you as soon as I can! :D</p>
+              <p>Your note is copied. Send it from your email, or paste it to @biggodoodle.</p>
+              <div class="hero-actions">
+                <a class="btn" id="mail-link" href="mailto:?subject=Note%20for%20Haley%20Nichols">Open email</a>
+                <a class="btn btn-ghost" href="https://www.instagram.com/biggodoodle/?hl=en">Open Instagram</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="js/world.js"></script>
+</body>
+</html>
