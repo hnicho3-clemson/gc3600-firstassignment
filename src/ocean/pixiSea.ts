@@ -10,6 +10,7 @@ import {
   type Ticker,
 } from "pixi.js";
 import {
+  mediaUrl,
   personalTentacles,
   projectById,
   shellIds,
@@ -588,14 +589,14 @@ type Fish = {
 type Bubble = { node: Graphics; x: number; y: number; v: number; wob: number };
 
 const THUMBS = [
-  "/media/thumbs/sjwd-welcome.webp",
-  "/media/thumbs/sjwd-map.webp",
-  "/media/thumbs/imagine-11.webp",
-  "/media/thumbs/imagine-01.webp",
-  "/media/thumbs/frog-machine.webp",
-  "/media/thumbs/plush-juno.webp",
-  "/media/thumbs/plush-jamie.webp",
-  "/media/thumbs/personal-02.webp",
+  mediaUrl("media/thumbs/sjwd-welcome.webp"),
+  mediaUrl("media/thumbs/sjwd-map.webp"),
+  mediaUrl("media/thumbs/imagine-11.webp"),
+  mediaUrl("media/thumbs/imagine-01.webp"),
+  mediaUrl("media/thumbs/frog-machine.webp"),
+  mediaUrl("media/thumbs/plush-juno.webp"),
+  mediaUrl("media/thumbs/plush-jamie.webp"),
+  mediaUrl("media/thumbs/personal-02.webp"),
   ...personalTentacles.map((item) => item.thumb),
 ];
 
@@ -826,10 +827,10 @@ export async function mountSea(host: HTMLElement, hooks: SeaHooks) {
   if (sjwd) {
     const node = new Container();
     node.addChild(drawTower());
-    const welcome = framed(tex("/media/thumbs/sjwd-welcome.webp"), 1.28);
+    const welcome = framed(tex(mediaUrl("media/thumbs/sjwd-welcome.webp")), 1.28);
     welcome.position.set(0.95, -0.35);
     welcome.rotation = -0.06;
-    const map = framed(tex("/media/thumbs/sjwd-map.webp"), 1.05);
+    const map = framed(tex(mediaUrl("media/thumbs/sjwd-map.webp")), 1.05);
     map.position.set(1.15, 0.55);
     map.rotation = 0.08;
     node.addChild(welcome, map);
@@ -849,10 +850,10 @@ export async function mountSea(host: HTMLElement, hooks: SeaHooks) {
     tables.roundRect(-0.32, -0.42, 0.6, 0.1, 0.03).fill(0xf0e0c4);
     tables.moveTo(-0.55, 0.25).lineTo(-0.55, 0.55).stroke(0.03, 0x6b4a32);
     tables.moveTo(0.45, 0.25).lineTo(0.45, 0.55).stroke(0.03, 0x6b4a32);
-    const hero = framed(tex("/media/thumbs/imagine-11.webp"), 1.25);
+    const hero = framed(tex(mediaUrl("media/thumbs/imagine-11.webp")), 1.25);
     hero.position.set(-0.15, -0.15);
     hero.rotation = -0.04;
-    const concept = framed(tex("/media/thumbs/imagine-01.webp"), 0.72);
+    const concept = framed(tex(mediaUrl("media/thumbs/imagine-01.webp")), 0.72);
     concept.position.set(0.95, -0.55);
     concept.rotation = 0.12;
     node.addChild(tables.done(), hero, concept);
@@ -866,7 +867,7 @@ export async function mountSea(host: HTMLElement, hooks: SeaHooks) {
 
   if (frog) {
     const chest = drawChest();
-    const print = framed(tex("/media/thumbs/frog-machine.webp"), 1.15);
+    const print = framed(tex(mediaUrl("media/thumbs/frog-machine.webp")), 1.15);
     print.position.set(0.95, -0.45);
     print.rotation = -0.08;
     const node = new Container();
@@ -886,10 +887,10 @@ export async function mountSea(host: HTMLElement, hooks: SeaHooks) {
     dolls.circle(-0.85, -0.22, 0.16).fill(0xf0d2b4);
     dolls.ellipse(0.95, 0.18, 0.26, 0.32).fill(0x6d8a58);
     dolls.circle(0.95, -0.18, 0.15).fill(0xf3ddc4);
-    const juno = framed(tex("/media/thumbs/plush-juno.webp"), 1.05);
+    const juno = framed(tex(mediaUrl("media/thumbs/plush-juno.webp")), 1.05);
     juno.position.set(-0.35, -0.15);
     juno.rotation = -0.05;
-    const jamie = framed(tex("/media/thumbs/plush-jamie.webp"), 1.02);
+    const jamie = framed(tex(mediaUrl("media/thumbs/plush-jamie.webp")), 1.02);
     jamie.position.set(0.45, 0.05);
     jamie.rotation = 0.06;
     node.addChild(dolls.done(), juno, jamie);
@@ -915,7 +916,7 @@ export async function mountSea(host: HTMLElement, hooks: SeaHooks) {
     hotbeds.push({ id: personal.id, node: octo.node, base: 1 });
   }
 
-  const portrait = framed(tex("/media/thumbs/personal-02.webp"), 1.2);
+  const portrait = framed(tex(mediaUrl("media/thumbs/personal-02.webp")), 1.2);
   portrait.rotation = -0.08;
   hit(portrait, portrait.hitArea as Rectangle, () => hooks.openProject("personal", 1), "portrait");
   place("portrait", 1.15, -24.7, portrait, 0.03);

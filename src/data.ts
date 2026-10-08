@@ -27,7 +27,13 @@ export type Project = {
   slides: Slide[];
 };
 
-const img = (path: string) => `/media/${path}.webp`;
+/** Public URL for a file in `public/`, respecting Vite's base path. */
+export function mediaUrl(path: string) {
+  const base = import.meta.env.BASE_URL;
+  return `${base}${path.replace(/^\//, "")}`;
+}
+
+const img = (path: string) => mediaUrl(`media/${path}.webp`);
 
 export const projects: Project[] = [
   {
@@ -215,12 +221,12 @@ export const projects: Project[] = [
 ];
 
 export const personalTentacles = [
-  { slide: 0, thumb: "/media/thumbs/personal-01.webp" },
-  { slide: 2, thumb: "/media/thumbs/personal-03.webp" },
-  { slide: 3, thumb: "/media/thumbs/personal-04.webp" },
-  { slide: 4, thumb: "/media/thumbs/personal-05.webp" },
-  { slide: 6, thumb: "/media/thumbs/personal-07.webp" },
-  { slide: 8, thumb: "/media/thumbs/personal-09.webp" },
+  { slide: 0, thumb: mediaUrl("media/thumbs/personal-01.webp") },
+  { slide: 2, thumb: mediaUrl("media/thumbs/personal-03.webp") },
+  { slide: 3, thumb: mediaUrl("media/thumbs/personal-04.webp") },
+  { slide: 4, thumb: mediaUrl("media/thumbs/personal-05.webp") },
+  { slide: 6, thumb: mediaUrl("media/thumbs/personal-07.webp") },
+  { slide: 8, thumb: mediaUrl("media/thumbs/personal-09.webp") },
 ];
 
 export const stops = [
